@@ -1,8 +1,8 @@
 public class SortTest {
-	public static boolean testBubbleSort() {
+	public static String testBubbleSort() {
 		// the array-keys
 		int[] arrayKey = {1, 2, 3, 4, 5};
-		int[] arrayMultipleSameKey = {2, 2, 3, 3, 5};
+		int[] arrayMultipleOfSameKey = {2, 2, 3, 3, 5};
 
 		// the arrays to be tested
 		int[] arrayInOrder = {1, 2, 3, 4, 5};
@@ -13,31 +13,31 @@ public class SortTest {
 		// test the arrays and return false if they didn't work
 		BubbleSort.sort(arrayInOrder);
 		if (!equals(arrayKey, arrayInOrder)) {
-			return false;
+			return "fails on already sorted set";
 		}
 
 		BubbleSort.sort(arrayReversedOrder);
 		if (!equals(arrayKey, arrayReversedOrder)) {
-			return false;
+			return "fails on reversed sorted set";
 		}
 
 		BubbleSort.sort(arrayRandomOrder);
 		if (!equals(arrayKey, arrayRandomOrder)) {
-			return false;
+			return "fails on randomly 'sorted' set";
 		}
 
 		BubbleSort.sort(arrayMultipleSame);
-		if (!equals(arrayMultipleSameKey, arrayMultipleSame)) {
-			return false;
+		if (!equals(arrayMultipleOfSameKey, arrayMultipleSame)) {
+			return "fails on set with multiple equal values";
 		}
 
-		return true;
+		return "works fine";
 	}
 
 	public static boolean testInsertionSort() {
 		// the array-keys
 		int[] arrayKey = {1, 2, 3, 4, 5};
-		int[] arrayMultipleSameKey = {2, 2, 3, 3, 5};
+		int[] arrayMultipleOfSameKey = {2, 2, 3, 3, 5};
 
 		// the arrays to be tested
 		int[] arrayInOrder = {1, 2, 3, 4, 5};
@@ -48,22 +48,22 @@ public class SortTest {
 		// test the arrays and return false if they didn't work
 		InsertionSort.sort(arrayInOrder);
 		if (!equals(arrayKey, arrayInOrder)) {
-			return false;
+			return "fails on already sorted set";
 		}
 
 		InsertionSort.sort(arrayReversedOrder);
 		if (!equals(arrayKey, arrayReversedOrder)) {
-			return false;
+			return "fails on reversed sorted set";
 		}
 
 		InsertionSort.sort(arrayRandomOrder);
 		if (!equals(arrayKey, arrayRandomOrder)) {
-			return false;
+			return "fails on randomly 'sorted' set";
 		}
 
 		InsertionSort.sort(arrayMultipleSame);
-		if (!equals(arrayMultipleSameKey, arrayMultipleSame)) {
-			return false;
+		if (!equals(arrayMultipleOfSameKey, arrayMultipleSame)) {
+			return "fails on set with multiple equal values";
 		}
 
 		return true;
@@ -79,7 +79,8 @@ public class SortTest {
 				return false;
 			}
 		}
-		return true;
+
+		return "works fine";
 	}
 
 	// prints out the array in order
